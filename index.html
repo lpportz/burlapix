@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <button id="pix" onclick="copiarTexto()">Copiar Chave Pix</button>
+    <script>
+        let copiarTexto = () => {
+            //O texto que será copiado
+            const texto = "00020126400014br.gov.bcb.pix0111017185740290203Pix520400005303986540529.905802BR5911LUCAS PORTZ6008BRASILIA62290525SoCF5qw33NIl9S9D6qTkDjDKT6304301D";
+            //Cria um elemento input (pode ser um textarea)
+            let inputTest = document.createElement("input");
+            inputTest.value = texto;
+            //Anexa o elemento ao body
+            document.body.appendChild(inputTest);
+            //seleciona todo o texto do elemento
+            inputTest.select();
+            //executa o comando copy
+            //aqui é feito o ato de copiar para a area de trabalho com base na seleção
+            document.execCommand('copy');
+            //remove o elemento
+            document.body.removeChild(inputTest);
+            alert("Chave pix copiada com sucesso, efetue o pagamento e depois nos envie o comprovante pelo whatsapp!")
+        };
+    </script>
+</body>
+</html>
